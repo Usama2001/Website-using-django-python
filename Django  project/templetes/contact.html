@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block titel %}Contact{% endblock titel %}Home
+
+{% block body %}
+
+<style>
+    .container {
+
+        background-color: #0fffa3;
+        ;
+        height: 525px;
+        width: 35%;
+        position: relative;
+        left: 400px;
+        top: 2px;
+        border-style: inset;
+    }
+
+    .container1 {
+
+        /* background-color: #024646;; */
+        height: 50px;
+        width: 50%;
+        position: relative;
+        left: 10x;
+        top: 2px;
+        /* border-style:inset; */
+    }
+
+    input[type=text] {
+        width: 40%;
+        padding: 10px;
+        margin: 5px 0 2px 0;
+        display: inline-block;
+        border: rgb(196, 17, 17);
+        background: #f1f1f1;
+        border-radius: 30px;
+        height: 50px;
+        width: 100%;
+    }
+
+    input[type=text]:focus {
+        background-color: rgb(24, 179, 166);
+        outline: none;
+    }
+
+    input[type=number] {
+
+        width: 40%;
+        padding: 10px;
+        margin: 5px 0 2px 0;
+        display: inline-block;
+        border: black;
+        background: #f1f1f1;
+        border-radius: 30px;
+        height: 50px;
+        width: 100%;
+    }
+
+    input[type=number]:focus {
+        background-color: rgb(24, 179, 166);
+        outline: none;
+    }
+
+    input[type=text1] {
+        width: 60%;
+        padding: 15px;
+        margin: 5px 0 2px 0;
+        display: inline-block;
+        border: black;
+        background: #f1f1f1;
+        border-radius: 30px;
+        height: 70px;
+        width: 100%;
+    }
+
+    input[type=text1]:focus {
+        background-color: rgb(24, 179, 166);
+        outline: none;
+    }
+</style>
+
+<div class="container-fluid px-0">
+
+    <img src="/static/contcat-03-03.jpg" class="d-block w-100" alt="...">
+</div>
+
+<div class="container-fluid text-center" style="font-size: 100px;">
+    Contact
+</div>
+
+<div class="container mx--3">
+    <form class="post" method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label style="color: rgb(5, 5, 5);font-weight: bold;">Name</label>
+            <br>
+            <input type="text" name="name" placeholder="Name" size="15" required />
+            <div class="form-text">We'll never share your email with anyone else.
+            </div>
+
+            <div class="mb-3">
+                <label style="color: rgb(0, 0, 0);font-weight: bold;">Email address</label>
+                <br>
+                <input type="text" name="email" placeholder="Email Addree" size="15" required />
+                <div class="form-text">We'll never share your email with anyone else.
+                </div>
+
+                <br>
+
+                <div class="mb-3">
+                    <label style="color: rgb(0, 0, 0);font-weight: bold;">Phone Number</label>
+                    <br>
+                    <input type="number" name="number" placeholder="Number" size="15" required />
+                    <div id="emailHelp" name="number" margin:="" -1.75rem;="" class="form-text">We'll never share your
+                        email with anyone else.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label style="color: rgb(0, 0, 0);font-weight: bold;">Text Area</label>
+                    <br>
+                    <input type="text1" name="Textarea" placeholder="Text Area" size="15" required />
+                </div>
+
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+{% endblock body %}
